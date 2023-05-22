@@ -1,0 +1,711 @@
+* {
+  box-sizing: border-box;
+}
+
+/***********************************************************/
+
+.formContainer {
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.formContainer .m {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formContainer button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.formContainer button:hover {
+  background-color: #45a049;
+}
+
+.formContainer .error {
+  color: red;
+  font-weight: bold;
+}
+
+/**************************** Nav *******************************/
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(170, 165, 165);
+}
+.nav .logo {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  cursor: pointer;
+  text-decoration: none;
+  color: #1B1B1B;
+}
+
+.nav .logo .red {
+  background-color: #3e04d1;
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav .logo .triangle {   /* https://css-tricks.com/the-shapes-of-css/ */
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-left: 18px solid white;
+  border-bottom: 9px solid transparent;
+}
+
+.nav .logo .YourVideo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.nav .midEmpty {
+  width: 20%;
+}
+
+.nav .links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 40%;
+}
+
+.nav .links .l {
+  color: #015ED4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin-left: 20px;
+  border: 1px solid rgb(170, 165, 165);
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  height: 30px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav .links .l:hover {
+  background-color: #d4dcd4;
+}
+
+.nav .links .profile {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.nav .links .profile .profileIMG {
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.nav .links .profile div {
+  margin: auto;
+  text-align: center;
+  color: #1B1B1B;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 740px) {
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+ 
+
+ .nav .logo {
+    width: 100%;
+  }
+
+  .nav .links {
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .nav .midEmpty {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .nav .logo .red {
+    width: 50px;
+    height: 28px;
+    border-radius: 5px;
+  }
+
+  .nav .logo .triangle {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 12px solid white;
+    border-bottom: 6px solid transparent;
+  }
+  
+  .nav .logo .YourVideo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+}
+
+/**************************** all videos *******************************/
+
+.main .allVid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  background-color: rgb(252, 240, 240);
+  border-radius: 10px;
+}
+
+.main .sortSearch {
+  margin-bottom: 20px;
+}
+
+.main .sortSearch .sort {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 100px;
+  background-color: #E5E5E5;
+  color: rgb(46, 42, 42);
+  width: 90px;
+  height: 40px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 7px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.main .sortSearch .sortVisited {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 100px;
+  background-color: black;
+  color: white;
+  width: 90px;
+  height: 40px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 7px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main .sortSearch .sort:hover{
+  background-color: #c3d4c3;
+}
+
+.main .sortSearch .search {
+  display: inline-block;
+}
+
+.main .sortSearch .search .searchInput {
+  width: 65%;
+  height: 40px;
+  padding: 12px 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border: 2px solid #E5E5E5;
+  font-size: 15px;
+}
+
+.main .sortSearch .search .searchButton {
+  width: 5%;
+  height: 40px;
+  padding: 12px 15px;
+  background-color: #E5E5E5;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.main .sortSearch .search .searchButton:hover{
+  background-color: #c3d4c3;
+}
+
+.main .sortSearch .search .searchButtonVisited {
+  width: 5%;
+  height: 40px;
+  padding: 12px 15px;
+  background-color: black;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/******************* Pagination ***********************************************/
+
+.main .pagination {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination .previous {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 24px solid #93a293;
+  border-bottom: 12px solid transparent;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.pagination .previous:hover {
+  border-right: 24px solid black;
+}
+
+.pagination .next {  /*https://css-tricks.com/the-shapes-of-css/*/
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-left: 24px solid #93a293;
+  border-bottom: 12px solid transparent;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.pagination .next:hover {
+  border-left: 24px solid black;
+}
+
+.pagination input {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border: 2px solid gray;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(81, 73, 73);;
+}
+
+.pagination .go {
+  background-color: #93a293;
+  color: white;
+  width: 50px;
+  height: 30px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination .go:hover {
+  background-color: #4a534a;
+}
+
+/**************************** video *******************************/
+
+.video {
+  margin-bottom: 20px;
+  margin-right: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.video:hover {
+  background-color: rgb(236, 214, 214);
+}
+
+.video .title {
+  color: #1B1B1B;
+  font-family: "Roboto","Arial",sans-serif;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+
+.video .vidIMG {
+  width: 330px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.video .vidInfo .vidUser {
+  color: #666666;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.vidVeiws {
+  margin-right: 40px;
+  margin-top: 2px;
+  margin-left: 10px;
+
+}
+
+.vidVeiws , .vidDate {
+  color: #666666;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/**************************** display video *******************************/
+.vidDisplay {
+  background-color: rgb(252, 240, 240);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+
+.vidDisplay video {
+  width: 932px;
+  height: 524px;
+  background-color: #211f1f;
+  margin: auto;
+}
+
+.vidDisplay .vidTitle {
+  margin-left: 50px;
+  margin-top: 10px;
+  font-weight: 630;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 980px) {
+  .vidDisplay video {
+    width: 800px;
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .vidDisplay video {
+    width: 600px;
+    height: 337px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .vidDisplay video {
+    width: 400px;
+    height: 224px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .vidDisplay video {
+    width: 300px;
+    height: 168px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .vidDisplay video {
+    width: 250px;
+    height: 140.5px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .vidDisplay video {
+    width: 150px;
+    height: 84px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .vidDisplay .vidTitle {
+    margin-left: 18%;
+  }
+}
+
+/**************************** video information *******************************/
+
+.vidDisplay .vidInfom {
+  margin-left: 100px;
+  margin-top: 20px;
+  color: #666666;
+}
+
+.vidDisplay .vidUser , .vidViews , .vidDateUp {
+  margin-right: 80px;
+  display: inline-block;
+}
+
+.vidDisplay .vidLikes {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.vidDisplay .vidLikes i {
+  font-size: 25px;
+  margin-right: 3px;
+}
+
+.vidDisplay .vidLikes .guestLike {
+  color: #666666;
+}
+.vidDisplay .vidLikes .likeIcon {
+  color: #666666;
+  cursor: pointer;
+}
+
+.vidDisplay .vidLikes .likeIconActive {
+  color: #015ED4;
+  cursor: pointer;
+}
+
+.vidDisplay .vidRate {
+  margin-top: 10px; 
+}
+
+.vidDisplay .vidRate span {
+  font-size: 20px;
+  margin-right: 6px;
+}
+
+.vidDisplay .guestRate {
+  cursor: auto;
+}
+
+.vidDisplay .userRate {
+  cursor: pointer;
+}
+
+.vidDisplay .vidRate .checkedOrange {
+  color: orange;
+}
+
+.vidDisplay .checkedRed {
+  border: 3px solid #015ED4;
+}
+
+.vidDisplay .vidRate p {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1000px) {
+  .vidDisplay .vidInfom {
+    margin-left: 18%;
+  }
+}
+
+/************************** All Comments *****************/
+
+.allComm {
+  border-top: 2px solid rgb(170, 165, 165);
+  padding-top: 30px;
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 18%;
+}
+
+.allComm .newComm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.allComm .comInput {
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 10px;
+  height: 50px;
+  width: 70%;
+  font-size: 18px;
+}
+
+.button {
+  background-color: #93a293;
+  color: white;
+  width: 50px;
+  height: 30px;
+  padding: 3px 5px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #212321;
+}
+
+@media screen and (min-width: 1000px) {
+  .allComm {
+    margin-left: 18%;
+  }
+}
+/************************** Comm *****************/
+
+.comm {
+  margin-bottom: 50px;
+}
+
+.comm:nth-child(odd) {
+  background-color: #feebf8;
+  border: 0.5px solid rgb(170, 165, 165);
+}
+.comm:nth-child(even) {
+  background-color: #fff2e1;
+  border: 0.5px solid rgb(170, 165, 165);
+}
+
+.comm .commInfo {
+  display: flex;
+  align-items: center;
+}
+
+.comm .commInfo .comIMG {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.comm .commInfo span {
+  margin-right: 20px;
+  color: #666666;
+}
+
+.comm .commContent {
+  font-size: 25px;
+  margin-bottom: 2px;
+}
+
+.comm .commButton span {
+  margin-right: 20px;
+  color: #5384c3;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.comm .commButton span:hover {
+  color: #083268;
+}
+
+.comm .commButton .editReply,.save {
+  margin-left: 20px;
+}
+
+.comm .editInput , .replyInput {
+  margin-left: 20px;
+  border-radius: 10px;
+  height: 50px;
+  width: 30%;
+  font-size: 18px;
+}
+
+/*************************************** Reply *****************************************/
+.reply {
+  margin-left: 50px;
+}
+.reply .buttonRep,.cancelReply {
+  margin-left: 15px;
+  color: #5384c3;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.reply .buttonRep:hover,.cancelReply:hover {
+  color: #083268;
+}
+
+.singleRep{
+  margin-bottom: 30px;
+} 
+
+.replyInfo .repIMG {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.replyInfo span {
+  margin-right: 20px;
+  color: #666666;
+}
+
+.repContent {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.replyDelete {
+  color: #5384c3;
+  text-decoration: none;
+  cursor: pointer;
+}
